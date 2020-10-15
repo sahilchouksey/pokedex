@@ -1,0 +1,46 @@
+{
+  "name": "PokeDex",
+  "version": "1.0.0",
+  "description": "PokeDex",
+  "main": "index.js",
+  "scripts": {
+    "watch:sass": "node-sass dist/sass/main.scss dist/css/style.css -w",
+    "dev": "webpack --mode development",
+    "build": "webpack --mode production",
+    "deploy": "gh-pages -d dist",
+    "start": "webpack-dev-server --mode development --open",
+    "compile:css": "node-sass dist/sass/main.scss dist/css/style.comp.css",
+    "concat:css": "concat -o dist/css/style.concat.css dist/css/icon-font.css css/style.comp.css",
+    "prefix:css": "postcss dist/css/style.css -o dist/css/style.prefixed.css",
+    "compress:css": "node-sass dist/css/style.prefixed.css dist/css/style.main.css --output-style compressed",
+    "build:css": "npm-run-all compile:css concat:css prefix:css compress:css"
+  },
+  "author": "sahil chouskey",
+  "license": "ISC",
+  "homepage": "https://sahilchouksey.github.io/pokedex",
+  "devDependencies": {
+    "autoprefixer": "^10.0.1",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.5",
+    "babel-preset-env": "^1.7.0",
+    "concat": "^1.0.3",
+    "html-webpack-plugin": "^4.3.0",
+    "install": "^0.13.0",
+    "node-sass": "^4.14.1",
+    "npm": "^6.14.5",
+    "postcss": "^8.1.1",
+    "postcss-cli": "^8.1.0",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3.11.0"
+  },
+  "dependencies": {
+    "axios": "^0.19.2",
+    "babel-polyfill": "^6.26.0",
+    "fraction.js": "^4.0.12",
+    "g-i-s": "^2.1.6",
+    "gh-pages": "^3.1.0",
+    "npm-run-all": "^4.1.5",
+    "uniqid": "^5.2.0"
+  }
+}
