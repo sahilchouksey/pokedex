@@ -1,0 +1,48 @@
+.error {
+    &__container {
+        position: fixed;
+        height: 100vh;
+        right: 0;
+        width: 90%;
+        display: block;
+        z-index: 2000;
+        background-color: $color-grey-light-2;
+    }
+    
+    &__404 {
+        position: absolute;
+        top: 30%;
+        left: 48%;
+        transform: translate(-50%, -50%);
+        font-size: 6rem;
+        letter-spacing: 1rem;
+    }
+
+    &__text {
+        position: absolute;
+        top: 40%;
+        left: 48%;
+        transform: translate(-50%, -50%);
+        font-size: 1.5rem;
+        letter-spacing: .5rem;
+    }
+
+    &__btn {
+        letter-spacing: .1rem;
+        display: inline-block;
+        position: absolute;
+        top: 50%;
+        left: 48%;
+        transform: translate(-50%, -50%) scale(1.2);
+        box-shadow: 0 0.4rem 2rem rgba(0, 0, 0, 0.1);   
+        animation: none;
+        text-decoration: none;
+
+        &:hover {
+           transform: translate(-50%, -50%) scale(1); 
+           box-shadow: 0 1rem 4rem rgba(0, 0, 0, 0.1) !important;
+        }
+    }
+
+ 
+}

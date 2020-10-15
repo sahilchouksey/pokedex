@@ -116,10 +116,10 @@ const displayResult = (res) => {
                     <input type="checkbox" id="card-visitors-indicator-${res.id}" class="u-over-h"/> 
                     <div class="header u-over-h" style="background:${getColor(res.type[0])}"> 
                         <a href="#${res.id}"> 
-                            <label class="indicator u-over-h" for="card-visitors-indicator-${res.id}"> <svg class="open" width="18" > 
-                                <line x1="1.5" y1="12" x2="2" y2="25" stroke-linecap="round" style="stroke: #FFFFFF; stroke-width: 3;" /> 
-                                <line x1="9" y1="7" x2="9" y2="25" stroke-linecap="round" style="stroke: #FFFFFF; stroke-width: 3;" /> 
-                                <line x1="16.5" y1="2" x2="16.5" y2="25" stroke-linecap="round" style="stroke: #FFFFFF; stroke-width: 3;" /> </svg> <svg class="close" > 
+                            <label class="indicator u-over-h" for="card-visitors-indicator-${res.id}"> <svg class="open"  > 
+                                <line class="open__line" x1="1.5" y1="12" x2="2" y2="25" stroke-linecap="round" style="" /> 
+                                <line class="open__line" x1="9" y1="7" x2="9" y2="25" stroke-linecap="round" style="" /> 
+                                <line class="open__line" x1="16.5" y1="2" x2="16.5" y2="25" stroke-linecap="round" style="" /> </svg> <svg class="close" > 
                                 <line x1="1.5" y1="13.5" x2="15" y2="0" style="stroke: #FFFFFF; stroke-width: 3" /> 
                                 <line x1="1.5" y1="11.5" x2="15" y2="25" style="stroke: #FFFFFF; stroke-width: 3" /> </svg> 
                             </label> 

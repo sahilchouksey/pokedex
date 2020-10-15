@@ -1,0 +1,531 @@
+
+@font-face { font-family: xix; src: url('./font-txt/pdark.ttf'); } 
+
+.indicator {
+	cursor: pointer;
+}
+
+.container {
+	@include respond(v-sm-dev) {
+		margin: 0 7rem;
+	}
+}
+.result {
+	// margin-top: -8rem;
+}
+.card {
+	background-color: $color-white;
+	box-shadow: 0 3px .6rem rgba($color-black, 0.16), 0 3px .6rem rgba($color-black, 0.23);
+	border-radius: .5rem;
+}
+
+.item__card {
+	position: relative;
+	height: 48rem;
+	width: 33.333333333%;
+	float: left;
+
+	@include respond(tab-land) {
+		height: 44rem;
+		float: none;
+		width: 100% !important;
+	}
+	& > * {
+		overflow: hidden;
+	} 
+	&:last-child {
+		float: none;
+    	margin: 0 auto;
+	}
+}
+
+.card#card-visitors {
+	width: 30rem;
+	height: 40rem;
+	overflow: hidden;
+	@include center-block;
+	input[type="checkbox"] {
+		overflow: hidden;
+		display: none;
+		&:checked {
+			+ {
+				.header {
+					label.indicator {
+						overflow: hidden;
+						top: 30%;
+						right: calc(50% - 2.5rem);
+						margin: calc(-30% - 2.5rem) calc(50% - 2.5rem) 0 0;
+						box-shadow: none;
+						
+						-webkit-transition: top 0.3s cubic-bezier(0.4, 0.0, 0.2, 1) 0s, right 0.3s cubic-bezier(0.4, 0.0, 0.2, 1) 0s, background-color 0s cubic-bezier(0.4, 0.0, 0.2, 1) 0.6s, margin 0s cubic-bezier(0.4, 0.0, 0.2, 1) 0.9s;
+						-moz-transition: top 0.3s cubic-bezier(0.4, 0.0, 0.2, 1) 0s, right 0.3s cubic-bezier(0.4, 0.0, 0.2, 1) 0s, background-color 0s cubic-bezier(0.4, 0.0, 0.2, 1) 0.6s, margin 0s cubic-bezier(0.4, 0.0, 0.2, 1) 0.9s;
+						-o-transition: top 0.3s cubic-bezier(0.4, 0.0, 0.2, 1) 0s, right 0.3s cubic-bezier(0.4, 0.0, 0.2, 1) 0s, background-color 0s cubic-bezier(0.4, 0.0, 0.2, 1) 0.6s, margin 0s cubic-bezier(0.4, 0.0, 0.2, 1) 0.9s;
+						-ms-transition: top 0.3s cubic-bezier(0.4, 0.0, 0.2, 1) 0s, right 0.3s cubic-bezier(0.4, 0.0, 0.2, 1) 0s, background-color 0s cubic-bezier(0.4, 0.0, 0.2, 1) 0.6s, margin 0s cubic-bezier(0.4, 0.0, 0.2, 1) 0.9s;
+						transition: top 0.3s cubic-bezier(0.4, 0.0, 0.2, 1) 0s, right 0.3s cubic-bezier(0.4, 0.0, 0.2, 1) 0s, background-color 0s cubic-bezier(0.4, 0.0, 0.2, 1) 0.6s, margin 0s cubic-bezier(0.4, 0.0, 0.2, 1) 0.5s;
+						
+
+						
+						.open {
+							overflow: hidden;
+							opacity: 0;
+							-webkit-transition: opacity 0.2s cubic-bezier(0.4, 0.0, 0.2, 1) 0.2s;
+							-moz-transition: opacity 0.2s cubic-bezier(0.4, 0.0, 0.2, 1) 0.2s;
+							-o-transition: opacity 0.2s cubic-bezier(0.4, 0.0, 0.2, 1) 0.2s;
+							-ms-transition: opacity 0.2s cubic-bezier(0.4, 0.0, 0.2, 1) 0.2s;
+							transition: opacity 0.2s cubic-bezier(0.4, 0.0, 0.2, 1) 0.2s;
+
+							
+						}
+						.close {
+							overflow: hidden;
+							transform: scale(1);
+							-webkit-transition: transform 0.6s cubic-bezier(0.4, 0.0, 0.2, 1) 0.9s;
+							-moz-transition: transform 0.6s cubic-bezier(0.4, 0.0, 0.2, 1) 0.9s;
+							-o-transition: transform 0.6s cubic-bezier(0.4, 0.0, 0.2, 1) 0.9s;
+							-ms-transition: transform 0.6s cubic-bezier(0.4, 0.0, 0.2, 1) 0.9s;
+							transition: transform 0.6s cubic-bezier(0.4, 0.0, 0.2, 1) 0.9s;
+						}
+					}
+					.content {
+						overflow: hidden;
+						.data {
+							overflow: hidden;
+							opacity: 1;
+							-webkit-transition: opacity 0.8s cubic-bezier(0.4, 0.0, 0.2, 1) 0.45s;
+							-moz-transition: opacity 0.8s cubic-bezier(0.4, 0.0, 0.2, 1) 0.45s;
+							-o-transition: opacity 0.8s cubic-bezier(0.4, 0.0, 0.2, 1) 0.45s;
+							-ms-transition: opacity 0.8s cubic-bezier(0.4, 0.0, 0.2, 1) 0.45s;
+							transition: opacity 0.8s cubic-bezier(0.4, 0.0, 0.2, 1) 0.45s;
+							.graph {
+								.vertical {
+									.day {
+										.line-container {
+											max-height: 80%;
+											-webkit-transition: max-height 0.6s cubic-bezier(0.4, 0.0, 0.2, 1) 0.9s;
+											-moz-transition: max-height 0.6s cubic-bezier(0.4, 0.0, 0.2, 1) 0.9s;
+											-o-transition: max-height 0.6s cubic-bezier(0.4, 0.0, 0.2, 1) 0.9s;
+											-ms-transition: max-height 0.6s cubic-bezier(0.4, 0.0, 0.2, 1) 0.9s;
+											transition: max-height 0.6s cubic-bezier(0.4, 0.0, 0.2, 1) 0.9s;
+										}
+									}
+								}
+							}
+						}
+						.float {
+							overflow: hidden;
+							opacity: 1;
+							transform: scale(10);
+							-webkit-transition: transform 0.3s cubic-bezier(0.4, 0.0, 0.2, 1) 0.3s, opacity 0s cubic-bezier(0.4, 0.0, 0.2, 1) 0.3s;
+							-moz-transition: transform 0.3s cubic-bezier(0.4, 0.0, 0.2, 1) 0.3s, opacity 0s cubic-bezier(0.4, 0.0, 0.2, 1) 0.3s;
+							-o-transition: transform 0.3s cubic-bezier(0.4, 0.0, 0.2, 1) 0.3s, opacity 0s cubic-bezier(0.4, 0.0, 0.2, 1) 0.3s;
+							-ms-transition: transform 0.3s cubic-bezier(0.4, 0.0, 0.2, 1) 0.3s, opacity 0s cubic-bezier(0.4, 0.0, 0.2, 1) 0.3s;
+							transition: transform 0.3s cubic-bezier(0.4, 0.0, 0.2, 1) 0.3s, opacity 0s cubic-bezier(0.4, 0.0, 0.2, 1) 0.3s;
+						}
+					}
+				}
+			}
+		}
+	}
+	.header {
+		overflow: hidden;
+		width: 100%;
+		height: 65%;
+		// background-color: $color-pink;
+
+		
+		background: $color-grey-dark-2; /* fallback for old browsers */
+		// background: -webkit-linear-gradient(to right, #ff414d, #f53844f1); /* Chrome 10-25, Safari 5.1-6 */
+		// background: linear-gradient(to right, #ff414d, #f53844f1); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	  
+		label.indicator {
+			overflow: hidden;
+			position: absolute;
+			z-index: 1;
+			width: 5rem;
+			height: 5rem;
+			top: calc(65% - 2.5rem);
+			right: 3rem;
+			margin: 0;
+			border-radius: 100%;
+			@include respond (sm-dev) {
+				width: 5.2rem;
+				height: 5.2rem;
+			}
+			
+			@include respond (v-sm-dev) {
+				
+				border-radius: 50%;
+			}
+			background-color: $color-black-2; /* fallback for old browsers */
+			background-color: -webkit-linear-gradient(to right, $color-black-2, $color-black-3); /* Chrome 10-25, Safari 5.1-6 */
+			background-color: linear-gradient(to right, $color-black-2, $color-black-3); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+		  
+			box-shadow: 0px 0px 6rem 1rem rgba($color-black, 0.5);
+
+			&:hover {
+				box-shadow: 0px 2rem 3.5rem -1.6rem rgba($color-black, 0.65);
+			}
+
+			-webkit-transition: top 0.3s cubic-bezier(0.4, 0.0, 0.2, 1) 0.3s, right 0.3s cubic-bezier(0.4, 0.0, 0.2, 1) 0.3s, background-color 0.3s cubic-bezier(0.4, 0.0, 0.2, 1) 0s, margin 0.3s cubic-bezier(0.4, 0.0, 0.2, 1) 0.3s;
+			-moz-transition: top 0.3s cubic-bezier(0.4, 0.0, 0.2, 1) 0.3s, right 0.3s cubic-bezier(0.4, 0.0, 0.2, 1) 0.3s, background-color 0.3s cubic-bezier(0.4, 0.0, 0.2, 1) 0s, margin 0.3s cubic-bezier(0.4, 0.0, 0.2, 1) 0.3s;
+			-o-transition: top 0.3s cubic-bezier(0.4, 0.0, 0.2, 1) 0.3s, right 0.3s cubic-bezier(0.4, 0.0, 0.2, 1) 0.3s, background-color 0.3s cubic-bezier(0.4, 0.0, 0.2, 1) 0s, margin 0.3s cubic-bezier(0.4, 0.0, 0.2, 1) 0.3s;
+			-ms-transition: top 0.3s cubic-bezier(0.4, 0.0, 0.2, 1) 0.3s, right 0.3s cubic-bezier(0.4, 0.0, 0.2, 1) 0.3s, background-color 0.3s cubic-bezier(0.4, 0.0, 0.2, 1) 0s, margin 0.3s cubic-bezier(0.4, 0.0, 0.2, 1) 0.3s;
+			transition: top 0.3s cubic-bezier(0.4, 0.0, 0.2, 1) 0.3s, right 0.3s cubic-bezier(0.4, 0.0, 0.2, 1) 0.3s, background-color 0.3s cubic-bezier(0.4, 0.0, 0.2, 1) 0s, margin 0.3s cubic-bezier(0.4, 0.0, 0.2, 1) 0.3s;
+			
+			.open {
+				height: 27px;
+				width:18px;
+				overflow: hidden;
+				box-shadow: none;
+				position: absolute;
+				margin: 1.15rem 1.6rem;
+				opacity: 1;
+				&__line {
+					stroke: #FFFFFF; 
+					stroke-width: 3;
+				}
+				@include respond(tab-port) {
+					margin: 1rem 1.2rem !important;
+				}
+				
+				@include respond(sm-dev) {
+					margin: .6rem 0rem 0rem .97rem !important;
+					height: 22px;
+					&__line {  
+						stroke: #F0F0F0;
+						stroke-width: 1.8 !important;
+					}
+				}
+				
+				@include respond(v-sm-dev) {
+					margin: .6rem -.1rem 0rem .8rem !important;
+					   height: 20px;
+					   &__line {  
+						stroke: #F0F0F0;
+						stroke-width: 1.6 !important;
+					}
+				}
+
+				
+				-webkit-transition: opacity 0.3s cubic-bezier(0.4, 0.0, 0.2, 1) 0.6s;
+				-moz-transition: opacity 0.3s cubic-bezier(0.4, 0.0, 0.2, 1) 0.6s;
+				-o-transition: opacity 0.3s cubic-bezier(0.4, 0.0, 0.2, 1) 0.6s;
+				-ms-transition: opacity 0.3s cubic-bezier(0.4, 0.0, 0.2, 1) 0.6s;
+				transition: opacity 0.3s cubic-bezier(0.4, 0.0, 0.2, 1) 0.6s;
+			}
+			.close {
+				overflow: hidden;
+				box-shadow: none;
+				margin: 1.25rem 1.75rem;
+				transform: scale(0);
+
+				width:100%; // 15
+				height:100%; // 25
+
+				@include respond(sm-dev) {
+					width: 40%;
+				}
+				@include respond(v-sm-dev) {
+ 					height: 78%;
+				}
+				-webkit-transition: transform 0.6s cubic-bezier(0.4, 0.0, 0.2, 1) 0s;
+				-moz-transition: transform 0.6s cubic-bezier(0.4, 0.0, 0.2, 1) 0s;
+				-o-transition: transform 0.6s cubic-bezier(0.4, 0.0, 0.2, 1) 0s;
+				-ms-transition: transform 0.6s cubic-bezier(0.4, 0.0, 0.2, 1) 0s;
+				transition: transform 0.6s cubic-bezier(0.4, 0.0, 0.2, 1) 0s;
+			}
+		}
+		.content {
+			overflow: hidden;
+			position: relative;
+			width: 100%;
+			height: 100%;
+			>* {
+				color: $color-white;
+				font-weight: 500;
+			}
+			.data {
+				overflow: hidden;
+				position: absolute;
+				z-index: 2;
+				width: 100%;
+				height: 100%;
+				opacity: 0;
+				// background-color: $color-light-black;
+				background-color: $color-black-2; /* fallback for old browsers */
+				background-color: -webkit-linear-gradient(to right, $color-black-2, $color-black-3); /* Chrome 10-25, Safari 5.1-6 */
+				background-color: linear-gradient(to right, $color-black-2, $color-black-3); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	
+				-webkit-transition: opacity 0.3s cubic-bezier(0.4, 0.0, 0.2, 1) 0s;
+				-moz-transition: opacity 0.3s cubic-bezier(0.4, 0.0, 0.2, 1) 0s;
+				-o-transition: opacity 0.3s cubic-bezier(0.4, 0.0, 0.2, 1) 0s;
+				-ms-transition: opacity 0.3s cubic-bezier(0.4, 0.0, 0.2, 1) 0s;
+				transition: opacity 0.3s cubic-bezier(0.4, 0.0, 0.2, 1) 0s;
+				.top {
+					overflow: hidden;
+					width: 100%;
+					height: 30%;
+
+					.title {
+						width: 100%;
+					}
+				}
+				.stats {
+					overflow: hidden;
+					position: relative;
+					width: calc(100% - 4rem);
+					height: 65%;
+					margin: 0 2rem 2rem 2rem;
+					
+					&__pk {
+						overflow: hidden;
+						&:not(:last-child) {
+							margin-bottom: 1rem;
+						}
+						position: relative;
+					}
+
+					&__text {
+						display: inline-block;
+						float: left;
+					}
+
+
+					&-d {
+						position: absolute;
+						height: 1.5rem;
+						z-index: 10;
+						background-color: #c937cc;
+					}
+					&__display {
+						float: left;
+						width: 20rem;
+						height: 1.5rem;
+						background-color: $color-grey-light-2;
+						position: absolute;
+						right: 0;
+						top:10%;
+
+						&-text {
+							position: absolute;
+							top: -8%;
+							left: 10%;
+							font-size: 1.1rem;
+						}
+						
+						&--hp {
+							height: 1.5rem;
+						}
+
+						&--defense {
+							height: 1.5rem;
+						}
+
+						&--attack {
+							height: 1.5rem;
+						}
+
+						&--speed {
+							height: 1.5rem;
+						}
+
+						&--specialAttack {
+							height: 1.5rem;
+						}
+
+						&--specialDefense {
+							height: 1.5rem;
+						}
+					}
+				}
+
+				.graph {
+					margin: 0 2rem 2rem 2rem;
+					.horizontal {
+						width: 100%;
+						height: 100%;
+						div {
+							height: 20%;
+							hr {
+								border: 1px solid $color-white;
+								opacity: .25;
+							}
+							p {
+								margin-top: 1px;
+								opacity: .7;
+								font-size: 1.3rem;
+							}
+						}
+					}
+					.vertical {
+						display: -webkit-box;
+						display: -moz-box;
+						display: -ms-flexbox;
+						display: -webkit-flex;
+						display: flex;
+						-webkit-box-orient: horizontal;
+						-moz-box-orient: horizontal;
+						-webkit-box-direction: normal;
+						-moz-box-direction: normal;
+						-webkit-flex-direction: row;
+						-ms-flex-direction: row;
+						flex-direction: row;
+						position: absolute;
+						width: 90%;
+						height: 100%;
+						top: 0;
+						margin-left: 10%;
+						.day {
+							position: relative;
+							width: calc(100% / 14);
+							height: 100%;
+							.line-container {
+								display: -webkit-box;
+								display: -moz-box;
+								display: -ms-flexbox;
+								display: -webkit-flex;
+								display: flex;
+								-webkit-box-orient: vertical;
+								-moz-box-orient: vertical;
+								-webkit-box-direction: normal;
+								-moz-box-direction: normal;
+								-webkit-flex-direction: column;
+								-ms-flex-direction: column;
+								flex-direction: column;
+								justify-content: flex-end;
+								position: absolute;
+								width: 2px;
+								height: 80%;
+								max-height: 0;
+								bottom: 20%;
+								margin: 0 calc((100% - 2px) / 2);
+								-webkit-transition: max-height 0.3s cubic-bezier(0.4, 0.0, 0.2, 1) 0s;
+								-moz-transition: max-height 0.3s cubic-bezier(0.4, 0.0, 0.2, 1) 0s;
+								-o-transition: max-height 0.3s cubic-bezier(0.4, 0.0, 0.2, 1) 0s;
+								-ms-transition: max-height 0.3s cubic-bezier(0.4, 0.0, 0.2, 1) 0s;
+								transition: max-height 0.3s cubic-bezier(0.4, 0.0, 0.2, 1) 0s;
+								.line {
+									width: 100%;
+									background-color: $color-white;
+								}
+							}
+							p {
+								position: absolute;
+								height: 20%;
+								bottom: 0;
+								margin-bottom: -3px;
+								opacity: .7;
+								font-size: 1.3rem;
+							}
+							.hidden {
+								opacity: 0;
+							}
+						}
+					}
+				}
+			}
+			.title {
+				margin-top: 1.5rem;
+				font-size: 2.5rem;
+				line-height: 3.0rem;
+				text-align: center;
+			}
+
+			.card__img {
+				display: block;
+				width: 70%;
+				@include center-block;
+				/* margin: 0 auto; */
+				/* margin-top: -2rem; */
+				transform: translate(-50%, -45%);
+			}
+			.date {
+				width: 100%;
+				opacity: .7;
+				text-align: center;
+			}
+			.float {
+				position: absolute;
+				width: 5rem;
+				height: 5rem;
+				top: 50%;
+				right: calc(50% - 2.5rem);
+				opacity: 0;
+				border-radius: 100%;
+				background-color: $color-black-2;
+				-webkit-transition: transform 0.3s cubic-bezier(0.4, 0.0, 0.2, 1) 0s, opacity 0s cubic-bezier(0.4, 0.0, 0.2, 1) 0s;
+				-moz-transition: transform 0.3s cubic-bezier(0.4, 0.0, 0.2, 1) 0s, opacity 0s cubic-bezier(0.4, 0.0, 0.2, 1) 0s;
+				-o-transition: transform 0.3s cubic-bezier(0.4, 0.0, 0.2, 1) 0s, opacity 0s cubic-bezier(0.4, 0.0, 0.2, 1) 0s;
+				-ms-transition: transform 0.3s cubic-bezier(0.4, 0.0, 0.2, 1) 0s, opacity 0s cubic-bezier(0.4, 0.0, 0.2, 1) 0s;
+				transition: transform 0.3s cubic-bezier(0.4, 0.0, 0.2, 1) 0s, opacity 0s cubic-bezier(0.4, 0.0, 0.2, 1) 0s;
+			}
+		}
+	}
+	.info {
+		width: calc(100% - 4rem);
+		height: calc(40% - 8rem);
+		padding: 2.5rem 2rem;
+		color: $color-grey-dark-4;
+		.counter {
+			
+			margin-top: 4.5rem;
+			color: $color-grey-dark-4;
+			font-size: 4.5rem;
+			font-weight: 400;
+			line-height: 4rem;
+			position: absolute;
+			.unit {
+				font-size: 1.5rem;
+			}
+		}
+		.pokemon__type {
+			width: 60%;
+			font-size: 1.2rem;
+			display: inline-block;
+			text-align: center;
+			color: $color-white;
+			
+
+			&--1 {
+				display: inline-block;
+				width: 40%;
+				background-color: $color-light-black;
+				float: left;
+				border-radius: $border-radius-default;
+			}
+
+			&--2 {
+				display: inline-block;
+				width: 40%;
+				background-color: transparent;
+				float: left;
+				margin-left: 2rem;
+				border-radius: 3px;
+			}
+
+			@include respond (v-sm-dev) {
+				font-size: 1.6rem;
+				&--1 {
+					border-radius: 10%;
+				}
+	
+				&--2 {
+					border-radius: 10%;
+				}
+			}
+		}
+	}
+}
+
+.unknown__txt {
+	font-family: xix;
+	font-size: 1.8rem;
+	text-transform: uppercase;
+	display: block;
+	width: 70%;
+	@include center-block;
+	/* margin: 0 auto; */
+	/* margin-top: -2rem; */
+	transform: translate(-45%, -50%);
+	letter-spacing:1.2rem;
+}
