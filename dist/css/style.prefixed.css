@@ -1857,6 +1857,9 @@ label.hamburger {
           transform: translate(-50%, -50%);
   font-size: 6rem;
   letter-spacing: 1rem; }
+  @media only screen and (max-width: 31.25em) {
+    .error__404 {
+      font-size: 7.5rem; } }
 
 .error__text {
   position: absolute;
@@ -1867,6 +1870,9 @@ label.hamburger {
           transform: translate(-50%, -50%);
   font-size: 1.5rem;
   letter-spacing: .5rem; }
+  @media only screen and (max-width: 31.25em) {
+    .error__text {
+      font-size: 2.2rem; } }
 
 .error__btn {
   letter-spacing: .1rem;
