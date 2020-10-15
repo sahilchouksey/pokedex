@@ -1,0 +1,39 @@
+*,
+*::after,
+*::before { /*now it will work fine on after and before classes*/
+    padding:0;
+    margin:0;
+    box-sizing: inherit;
+    z-index: 0;
+
+}
+
+html { /*ROOT*/
+    font-size: 62.5%;
+
+    @include respond(tab-land) {
+        font-size: 56.25%;           // 9/16  9px
+    }
+
+    @include respond(tab-port) {
+        font-size: 50%;             // 8/16  8px
+    }
+
+    @include respond(sm-dev) {
+        font-size: 37.5%;          // 6/16 6px
+    } 
+    
+    @include respond(v-sm-dev) {
+        font-size: 30%;          // 4.8/16 6px
+    }
+
+    @include respond(big-desktop) {
+        font-size: 75%;             // 12/16 12px
+    }
+}
+
+body {
+    box-sizing: border-box;
+
+
+}

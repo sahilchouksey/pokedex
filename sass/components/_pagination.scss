@@ -1,0 +1,62 @@
+.btn-inline {
+    
+    animation: moveToTop 2s cubic-bezier(0.68, -0.55, 0.27, 1.55) ;
+    color: $color-sky-d-blue;
+    font-size: 1.5rem;
+    border: none;
+    background-color: #F9F5F3;
+    padding: .8rem 1.2rem;
+    border-radius: 10rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 0.4rem 2rem rgba(0, 0, 0, 0.1);
+    transition: all .2s; 
+
+    &:hover {
+      box-shadow:none;
+    }
+  }
+    .btn-inline svg {
+      height: 1.5rem;
+      width: 1.5rem;
+      fill: currentColor;
+      margin: 0 .2rem; }
+    .btn-inline span {
+      margin: 0 .4rem; }
+    .btn-inline:hover {
+      color: $color-sky-d-blue;
+       }
+    .btn-inline:focus {
+      outline: none; }
+
+.results__pages,
+.likes__pages {
+  .row {
+    padding: 2.2rem 4rem; 
+  }
+}
+  .results__pages::after,
+  .likes__pages::after {
+    content: "";
+    display: table;
+    clear: both; }
+.results__btn--prev,
+.likes__btn--prev {
+  float: left;
+  flex-direction: row-reverse; }
+.results__btn--next,
+.likes__btn--next {
+  float: right; }
+
+  .pagination {
+    &--u {
+      margin-top: .5rem;
+    
+       
+    }
+    &--d {
+      margin-bottom: 4rem;
+
+    }
+  }

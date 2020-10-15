@@ -1,0 +1,96 @@
+.close-filter {
+    width: auto;
+    height: auto;
+    position: absolute;
+    top: .20%;
+    left: 53%;
+    display: inline-block;
+    background-color: #e2dada;
+    border-radius: 5rem;
+    padding: .24rem 1.5rem;
+    font-size: 1.9rem;
+    color: #000000ba;
+    text-decoration: none;
+    z-index: 200;   
+
+    
+
+    a {
+        border-radius: 50%;
+        padding: 0 .8rem;
+    
+        position: absolute;
+        top: 0;
+        right: -4.4rem;
+        text-decoration: none;
+        font-size: 3.5rem;
+        display: inline-block;
+        background-color: $color-red-light;
+        border-radius: 50%;
+        line-height: 1;
+        color: $color-grey-dark;
+        transition: all .2s;
+
+        &:focus {
+            outline: none;
+        }
+
+        &:hover {
+            color: $color-grey-dark-2;
+            background-color: #f0aaaa;
+        }
+    }
+}
+
+.container-filter{
+    position: absolute;
+    top: .1%;
+    left: 53%;
+    display:flex;
+    font-size: $font-default-size;
+    width:fit-content;
+    justify-content:center;
+    align-items:center;
+
+    @media (min-width: 31.25em) and (max-width: 75em) {
+        top: 0.05% !important;
+    }
+    @include respond(tab-land) {
+        
+    }
+    // @include respond(v-sm-dev) {
+    //     top: 0.02% !important;
+    //     left: 50%;
+    // }
+  }
+  
+  .container-filter .label {
+    color: #383838;
+    background:$color-white;
+    padding:1rem 2rem;
+    border-radius:4.9rem;
+    margin-right:5px;
+    box-shadow: 0 0.4rem 2rem rgba(0, 0, 0, 0.1);  }
+  
+  .container-filter .icon{
+    background:#F4CDCD;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:1.1rem;
+    border-radius:50%;
+    box-shadow: 0 0.4rem 2rem rgba(0, 0, 0, 0.1);    
+    transition:0.1s ease-in-out all; }
+
+    svg {
+       
+        height: 15px;
+        @include respond(sm-dev) {
+           
+            height: 12px;
+        }
+    }
+  
+  .container-filter .icon:hover{
+      background:#EFDCDC;
+  }

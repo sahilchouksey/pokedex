@@ -1,0 +1,9 @@
+@function getColor($color) {
+    @if (lightness($main) > 50) {
+        @return rgba(black, .8);
+    } @else {
+        @return rgba(white, .8);
+    }
+  }
+
+  
