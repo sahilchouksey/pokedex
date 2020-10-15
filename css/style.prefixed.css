@@ -1281,10 +1281,16 @@ body {
           justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
-          align-items: center; }
+          align-items: center;
+  -webkit-animation: moveToTop 2s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+          animation: moveToTop 2s cubic-bezier(0.68, -0.55, 0.27, 1.55); }
   @media (min-width: 31.25em) and (max-width: 75em) {
     .container-filter {
       top: 0.05% !important; } }
+  @media only screen and (max-width: 31.25em) {
+    .container-filter {
+      top: .07% !important;
+      left: 50%; } }
 
 .container-filter .label {
   color: #383838;
@@ -1851,6 +1857,9 @@ label.hamburger {
           transform: translate(-50%, -50%);
   font-size: 6rem;
   letter-spacing: 1rem; }
+  @media only screen and (max-width: 31.25em) {
+    .error__404 {
+      font-size: 7.5rem; } }
 
 .error__text {
   position: absolute;
@@ -1861,6 +1870,9 @@ label.hamburger {
           transform: translate(-50%, -50%);
   font-size: 1.5rem;
   letter-spacing: .5rem; }
+  @media only screen and (max-width: 31.25em) {
+    .error__text {
+      font-size: 2.2rem; } }
 
 .error__btn {
   letter-spacing: .1rem;

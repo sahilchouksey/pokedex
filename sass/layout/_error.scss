@@ -16,6 +16,10 @@
         transform: translate(-50%, -50%);
         font-size: 6rem;
         letter-spacing: 1rem;
+
+        @include respond(sm-dev) {
+            font-size: 7.5rem;
+        }
     }
 
     &__text {
@@ -25,6 +29,9 @@
         transform: translate(-50%, -50%);
         font-size: 1.5rem;
         letter-spacing: .5rem;
+        @include respond(sm-dev) {
+            font-size: 2.2rem;
+        }
     }
 
     &__btn {
@@ -36,11 +43,15 @@
         transform: translate(-50%, -50%) scale(1.2);
         box-shadow: 0 0.4rem 2rem rgba(0, 0, 0, 0.1);   
         animation: none;
-        text-decoration: none;
 
+        text-decoration: none;
+        
         &:hover {
            transform: translate(-50%, -50%) scale(1); 
            box-shadow: 0 1rem 4rem rgba(0, 0, 0, 0.1) !important;
+        }
+        @include respond(sm-dev) {
+            // font-size: 6rem;
         }
     }
 
