@@ -51,17 +51,18 @@
     width:fit-content;
     justify-content:center;
     align-items:center;
-
+    animation: moveToTop 2s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+    
     @media (min-width: 31.25em) and (max-width: 75em) {
         top: 0.05% !important;
     }
-    @include respond(tab-land) {
+    // @include respond(tab-land) {
         
-    }
-    // @include respond(v-sm-dev) {
-    //     top: 0.02% !important;
-    //     left: 50%;
     // }
+    @include respond(sm-dev) {
+        top: .07% !important;
+        left: 50%;
+    }
   }
   
   .container-filter .label {

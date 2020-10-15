@@ -906,10 +906,15 @@ body {
   font-size: 1.6rem;
   width: fit-content;
   justify-content: center;
-  align-items: center; }
+  align-items: center;
+  animation: moveToTop 2s cubic-bezier(0.68, -0.55, 0.27, 1.55); }
   @media (min-width: 31.25em) and (max-width: 75em) {
     .container-filter {
       top: 0.05% !important; } }
+  @media only screen and (max-width: 31.25em) {
+    .container-filter {
+      top: .07% !important;
+      left: 50%; } }
 
 .container-filter .label {
   color: #383838;

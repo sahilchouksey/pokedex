@@ -23,8 +23,14 @@ const controlSearch = async () => {
     window.location.hash = ""
     
 
-    let query = dataView.getInput();
+    let query = dataView.getInput().toLowerCase();
+    query = query.replace(/[^a-zA-Z]/g, '')
+
+    console.log(query)
     if (query) {
+
+        document.activeElement.blur();
+
         state.search = new Search(query)
 
         dataView.clearResult()
