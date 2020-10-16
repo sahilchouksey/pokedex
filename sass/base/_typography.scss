@@ -65,6 +65,12 @@ body {
 
     @include respond(sm-dev) {
         padding-left: .2rem;
+        font-size: 2.5rem;
+
+        .t-sm {
+            font-size: 3rem;
+            letter-spacing: .2rem;
+        }
     }
 }
 

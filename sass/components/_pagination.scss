@@ -35,6 +35,10 @@
   .row {
     padding: 2.2rem 4rem; 
   }
+
+  @include respond(sm-dev) {
+    margin-bottom: .69rem;
+  }
 }
   .results__pages::after,
   .likes__pages::after {
