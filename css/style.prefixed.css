@@ -728,6 +728,13 @@ body {
       -ms-transform: translate(-45%, -50%);
           transform: translate(-45%, -50%);
   letter-spacing: 1.2rem; }
+  @media only screen and (max-width: 31.25em) {
+    .unknown__txt {
+      font-size: 2.5rem;
+      width: auto;
+      -webkit-transform: translate(-50%, -50%);
+          -ms-transform: translate(-50%, -50%);
+              transform: translate(-50%, -50%); } }
 
 .btn-inline {
   -webkit-animation: moveToTop 2s cubic-bezier(0.68, -0.55, 0.27, 1.55);
@@ -772,6 +779,10 @@ body {
 .results__pages .row,
 .likes__pages .row {
   padding: 2.2rem 4rem; }
+  @media only screen and (max-width: 31.25em) {
+    .results__pages .row,
+    .likes__pages .row {
+      padding: 1.2rem 4rem !important; } }
 
 @media only screen and (max-width: 31.25em) {
   .results__pages,
@@ -1430,10 +1441,10 @@ svg {
   margin-top: -3rem; }
   @media only screen and (max-width: 31.25em) {
     .header .row {
-      margin-top: -2rem !important; } }
+      margin-top: -1.8rem !important; } }
   @media only screen and (max-width: 21.87em) {
     .header .row {
-      padding: 0 6rem; } }
+      margin-top: -1.89rem !important; } }
 
 .header .search__container {
   margin-top: 2.3rem;
