@@ -33,7 +33,6 @@ export default class PokemonDetails {
             this.abilities = res.abilites;
 
 
-            console.log(res);
         } catch (error) {
             dataView.popupError();
             console.log(error);

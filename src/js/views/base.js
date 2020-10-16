@@ -10,7 +10,8 @@ export const elements = {
     searchForm: document.querySelector('.search'),
     filterBtn: document.querySelector('.filter--b'),
     errorPopup: document.querySelector('.error_popup'),
-    hamburgerCheck: document.getElementById('hamburger')
+    hamburgerCheck: document.getElementById('hamburger'),
+    navBar: document.querySelector('.primnav')
 };
 
 const elStr = {

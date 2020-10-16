@@ -113,8 +113,8 @@ const displayResult = (res) => {
     const markUp = `
             <li class="item__card u-over-h">
                 <div class="card  u-over-h" id="card-visitors"> 
-                    <input type="checkbox" id="card-visitors-indicator-${res.id}" class="u-over-h"/> 
-                    <div class="header u-over-h" style="background:${getColor(res.type[0])}"> 
+                    <input type="checkbox" id="card-visitors-indicator-${res.id}" class="u-over-h card_checkbox"/> 
+                    <div class="header card__header u-over-h" style="background:${getColor(res.type[0])}"> 
                         <a href="#${res.id}"> 
                             <label class="indicator u-over-h" for="card-visitors-indicator-${res.id}"> <svg class="open"  > 
                                 <line class="open__line" x1="1.5" y1="12" x2="2" y2="25" stroke-linecap="round" style="" /> 

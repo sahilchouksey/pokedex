@@ -34,6 +34,11 @@
 .likes__pages {
   .row {
     padding: 2.2rem 4rem; 
+
+    @include respond(sm-dev) {
+      padding: 1.2rem 4rem !important;
+
+    }
   }
 
   @include respond(sm-dev) {

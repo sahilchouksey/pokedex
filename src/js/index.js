@@ -102,6 +102,18 @@ window.addEventListener('hashchange', () => {
 
 
 
+elements.contentContainer.addEventListener('click', e=> {
+    if (elements.hamburgerCheck.checked) {
+        elements.hamburgerCheck.checked = false
+    }
+})
+
+elements.navBar.addEventListener('click', e=> {
+    if (!elements.hamburgerCheck.checked) {
+        elements.hamburgerCheck.checked = true
+    }
+})
+
 
  
 const controlFilterType = async () => {
@@ -240,3 +252,11 @@ elements.paginationBtn.forEach(e=> e.addEventListener('click', async (e) => {
         }        
     }
   }))
+
+
+  elements.resultList.addEventListener('click', async (e) => {
+      const box = e.target.closest('.card__header');
+      if (box) {
+          if(!box.previousElementSibling.checked) box.previousElementSibling.checked = true;
+      }
+  })

@@ -578,4 +578,10 @@
 	/* margin-top: -2rem; */
 	transform: translate(-45%, -50%);
 	letter-spacing:1.2rem;
+
+	@include respond(sm-dev) {
+		font-size: 2.5rem;
+		width: auto;
+		transform: translate(-50%, -50%);
+	}
 }

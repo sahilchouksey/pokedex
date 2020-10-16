@@ -3,10 +3,11 @@
     .row {
         margin-top: -3rem;
         @include respond(sm-dev) {
-            margin-top: -2rem !important ;
+            margin-top: -1.8rem !important ;
         }
         @include respond(v-sm-dev) {
-            padding: 0 6rem;
+            margin-top: -1.89rem !important ;
+            // padding: 0 6rem;
         }
         
     } 
