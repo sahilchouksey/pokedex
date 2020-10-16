@@ -1,32 +1,23 @@
 import Search from './models/Search';
-
 import Data from './models/Data';
 import FilterType from './models/FilterType';
 import FilterGen from './models/FilterGen';
-
 import PokemonDetails from './models/PokemonDetails';
-
 import * as dataView from './views/dataView';
 import { elements, renderLoader, clearLoader } from './views/base'
 import { data } from 'autoprefixer';
 
 // GLOBAL VARIABLES
 const state = {};
-window.state = state;
 
-state.filterb = 0
-
+state.filterb = 0;
 
 const controlSearch = async () => {
     dataView.clearFilterBtn();
     dataView.removeError();
     window.location.hash = ""
-    
-
     let query = dataView.getInput().toLowerCase();
     query = query.replace(/[^a-zA-Z]/g, '')
-
-    console.log(query)
     if (query) {
 
         document.activeElement.blur();
@@ -50,17 +41,6 @@ const controlSearch = async () => {
         }
     }
     
-    // renderLoader(elements.container);
-    // try {
-    //     state.pokeData = new Data(); // show num of res/ start
-        
-    //     await state.pokeData.getResults();
-    //     clearLoader()
-    //     await dataView.renderResult(state.pokeData.result);
-    //     // console.log(pokeDetails);
-    // } catch (error) {
-    //     console.log(error)
-    // }
 }
 
 
@@ -81,7 +61,6 @@ const controlPokemonData = async () => {
         await state.pokeData.getResults();
         clearLoader()
         await dataView.renderResult(state.pokeData.result);
-        // console.log(pokeDetails);
     } catch (error) {
         state.filterb--;
         dataView.popupError();
@@ -139,7 +118,6 @@ const controlFilterType = async () => {
                 await dataView.renderResult(state.filterType.result);
                 state.filterb++;
 
-                // console.log(pokeDetails);
             } catch (error) {
                 state.filterb--;
                 dataView.popupError();
