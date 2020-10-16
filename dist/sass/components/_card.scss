@@ -60,6 +60,12 @@
 		width: 35rem;
     	height: 45rem;
 	}
+	
+	@include respond(v-sm-dev) {
+		width: 30rem;
+	}
+
+
 	input[type="checkbox"] {
 		overflow: hidden;
 		display: none;
