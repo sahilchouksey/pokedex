@@ -44,7 +44,7 @@
 
 .container-filter{
     position: absolute;
-    top: .1%;
+    top: 3%;
     left: 53%;
     display:flex;
     font-size: $font-default-size;
@@ -54,14 +54,14 @@
     animation: moveToTop 2s cubic-bezier(0.68, -0.55, 0.27, 1.55);
     
     @media (min-width: 31.25em) and (max-width: 75em) {
-        top: 0.05% !important;
+        left: 51%;
     }
     // @include respond(tab-land) {
         
     // }
     @include respond(sm-dev) {
-        top: .07% !important;
-        left: 50%;
+        // top: 4%;
+        left: 48%;
     }
   }
   

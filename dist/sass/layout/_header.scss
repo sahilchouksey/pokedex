@@ -53,6 +53,10 @@
             &:focus {
                 outline: 0;
             }
+
+            @include respond(sm-dev) {
+                margin-bottom: 2rem;
+            }
         }
     }
     

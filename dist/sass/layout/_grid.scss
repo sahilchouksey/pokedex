@@ -23,6 +23,11 @@
     }
     @include clearfix;
 
+    @include respond(sm-dev) {
+        padding: 0 4rem;
+        max-width: 44rem;
+    }
+
     [class^="col-"] { // ^ starts with * contain $ ends with
         float: left; //its become a inline el so lets use clearfix to fix this problem
 

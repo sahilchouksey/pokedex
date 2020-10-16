@@ -36,11 +36,14 @@ $text: getColor($main);
   overflow-y: hidden;
   box-sizing: border-box;
   z-index: 1;
-  // @include media-sm {
-    height: 100vh;
-    width: 5.8rem;
-    transition: width 246ms .5s ease;
-  // }
+  height: 100vh;
+  width: 5.8rem;
+  transition: width 246ms .5s ease;
+
+
+  @include respond(sm-dev) {
+    width: 6.2rem;
+  }
   
   > ul {
     display: none;
@@ -359,6 +362,11 @@ label.hamburger {
   position: fixed;
   top: 1.4rem;
   left: 1.7rem;
+
+  @include respond(sm-dev) {
+    top: 1.8rem;
+    left: 2rem;
+  }
 }
 
 .tabs {

@@ -6,8 +6,15 @@
 }
 
 .container {
+
 	@include respond(v-sm-dev) {
 		margin: 0 7rem;
+	}
+
+	& .result .row {
+		@include respond(sm-dev) {
+			max-width: 45rem;
+		}
 	}
 }
 .result {
@@ -37,6 +44,10 @@
 		float: none;
     	margin: 0 auto;
 	}
+
+	@include respond (sm-dev) {
+		height: 50rem;
+	}
 }
 
 .card#card-visitors {
@@ -44,6 +55,11 @@
 	height: 40rem;
 	overflow: hidden;
 	@include center-block;
+
+	@include respond(sm-dev) {
+		width: 35rem;
+    	height: 45rem;
+	}
 	input[type="checkbox"] {
 		overflow: hidden;
 		display: none;
@@ -283,6 +299,10 @@
 							margin-bottom: 1rem;
 						}
 						position: relative;
+
+						@include respond(sm-dev) {
+							margin-bottom: 1.5rem;
+						}
 					}
 
 					&__text {
@@ -438,6 +458,10 @@
 				/* margin: 0 auto; */
 				/* margin-top: -2rem; */
 				transform: translate(-50%, -45%);
+
+				@include respond (sm-dev) {
+					width: 80%;
+				}
 			}
 			.date {
 				width: 100%;
@@ -466,6 +490,10 @@
 		height: calc(40% - 8rem);
 		padding: 2.5rem 2rem;
 		color: $color-grey-dark-4;
+
+		@include respond(sm-dev) {
+			padding: 3.5rem 2rem;
+		}
 		.counter {
 			
 			margin-top: 4.5rem;
@@ -512,6 +540,28 @@
 				&--2 {
 					border-radius: 10%;
 				}
+			}
+		}
+
+		.more-info {
+			position: absolute;
+			left: 35%;
+			top: 69.55%;
+			font-size: 1.4rem;
+			line-height: 2.2;
+			color: $color-black-2;
+		
+			.more-info__el {
+				hyphens: auto;
+
+				.more-info__value {
+					color: $color-grey-dark-2;
+					font-size: 1.2rem;
+				}
+			}
+
+			@include respond(sm-dev) {
+				top: 72%;
 			}
 		}
 	}

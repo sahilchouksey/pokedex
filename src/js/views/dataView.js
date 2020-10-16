@@ -201,8 +201,10 @@ const displayResult = (res) => {
                         <div class="pokemon__type u-over-h">
                             ${res.type.length > 1 ? `<div class="pokemon__type--1" style="background:${getColor(res.type[0])}">${res.type[0]}</div><div class="pokemon__type--2" style="background:${getColor(res.type[1])}">${res.type[1]}</div>` : `<div class="pokemon__type--1" style="background:${getColor(res.type[0])}">${res.type[0]}</div>` }
                                                 
-                        <p class="counter u-over-h">#${res.id}</p> 
-                    </div>
+                            <p class="counter u-over-h">#${res.id}</p> 
+                        </div>
+
+
                 </div>
             </li>`
 

@@ -28,6 +28,12 @@ export default class PokemonDetails {
 
             this.type = pokeTypes[0];
             this.name = res.name;
+            this.height = res.height;
+            this.weight = res.weight;
+            this.abilities = res.abilites;
+
+
+            console.log(res);
         } catch (error) {
             dataView.popupError();
             console.log(error);
