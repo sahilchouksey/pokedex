@@ -64,6 +64,7 @@ body {
     }
 
     @include respond(sm-dev) {
+        padding-top: .8rem;
         padding-left: .2rem;
         font-size: 2.5rem;
 
