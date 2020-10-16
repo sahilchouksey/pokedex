@@ -254,9 +254,9 @@ elements.paginationBtn.forEach(e=> e.addEventListener('click', async (e) => {
   }))
 
 
-  elements.resultList.addEventListener('click', async (e) => {
-      const box = e.target.closest('.card__header');
-      if (box) {
-          if(!box.previousElementSibling.checked) box.previousElementSibling.checked = true;
-      }
-  })
+//   elements.resultList.addEventListener('click', async (e) => {
+//       const box = e.target.closest('.card__header');
+//       if (box) {
+//           if(!box.previousElementSibling.checked) box.previousElementSibling.checked = true;
+//       }
+//   })
