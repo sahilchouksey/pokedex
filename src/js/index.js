@@ -19,14 +19,12 @@ const controlSearch = async () => {
     window.location.hash = ""
     let query = dataView.getInput() //.toLowerCase();
   
-    console.log(query);
     if (query.length > 0) {
         // document.activeElement.blur();
 
         state.search = []
         query.forEach(q => state.search.push(new Search(q)) ) 
 
-        console.log(state.search);
 
         dataView.clearResult()
         renderLoader(elements.container);

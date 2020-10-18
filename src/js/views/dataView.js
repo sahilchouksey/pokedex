@@ -2,6 +2,7 @@ import * as ix from '../index';
 import { elements } from './base';
 import PokemonDetails from '../models/PokemonDetails';
 
+
 export const getXidData = () => {
     const x = document.querySelectorAll('item__card')
 }
@@ -11,7 +12,6 @@ export const getInput = () => {
     if (inputval !== '') {
         const pokemonNames = localStorage.names.split(',');
         let inputN = []
-        console.log(inputval.length);
         pokemonNames.forEach(el => {
             if (el.startsWith(inputval)) inputN.push(el)
         })

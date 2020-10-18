@@ -14,7 +14,7 @@ export default class PokemonData {
             this.result = data.data.results;
             this.names = [] 
             data.data.results.forEach(e=> this.names.push(e.name))
-            localStorage.setItem('pokemonNames', this.names)
+            localStorage.setItem('names', this.names)
             
         } catch (error) {
             dataView.popupError();
