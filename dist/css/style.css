@@ -205,12 +205,13 @@ body {
       width: 100% !important; } }
   .item__card > * {
     overflow: hidden; }
-  .item__card:last-child {
-    float: none;
-    margin: 0 auto; }
   @media only screen and (max-width: 31.25em) {
     .item__card {
       height: 50rem; } }
+
+.floatN {
+  float: none;
+  margin: 0 auto; }
 
 .card#card-visitors {
   width: 30rem;

@@ -1,8 +1,26 @@
-import * as idx from '../index';
+import * as ix from '../index';
 import { elements } from './base';
 import PokemonDetails from '../models/PokemonDetails';
 
-export const getInput = () => elements.searchValue.value;
+export const getXidData = () => {
+    const x = document.querySelectorAll('item__card')
+}
+
+export const getInput = () => {
+    const inputval = elements.searchValue.value.toLowerCase();
+    if (inputval !== '') {
+        const pokemonNames = localStorage.names.split(',');
+        let inputN = []
+        console.log(inputval.length);
+        pokemonNames.forEach(el => {
+            if (el.startsWith(inputval)) inputN.push(el)
+        })
+        return inputN   
+    }
+
+};
+
+
 export const clearSearchInput = () => elements.searchValue.value = '';
 
 
@@ -111,8 +129,8 @@ export const clearResult = () => {
 
 const displayResult = (res) => {
     const markUp = `
-            <li class="item__card u-over-h">
-                <div class="card  u-over-h" id="card-visitors"> 
+            <li class="item__card u-over-h" >
+                <div class="card  u-over-h" id="card-visitors" > 
                     <input type="checkbox" id="card-visitors-indicator-${res.id}" class="u-over-h card_checkbox"/> 
                     <div class="header card__header u-over-h" style="background:${getColor(res.type[0])}"> 
                         <a href="#${res.id}"> 
@@ -261,7 +279,7 @@ const renderButtons = (page, numResults, resPerPage) => {
 
 };
 
-export const renderResult = async (pokemons, page = 1, resPerPage = 40) => {
+export const renderResult = async (pokemons, page = 1, resPerPage = 30) => {
     const start = (page - 1) * resPerPage;
     const end = page * resPerPage;
     if (pokemons.length) {
@@ -295,4 +313,6 @@ export const renderResult = async (pokemons, page = 1, resPerPage = 40) => {
     
     // render pagination buttons 
     renderButtons(page, pokemons.length, resPerPage)
+
+
 }

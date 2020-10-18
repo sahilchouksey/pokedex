@@ -11,7 +11,8 @@ export const elements = {
     filterBtn: document.querySelector('.filter--b'),
     errorPopup: document.querySelector('.error_popup'),
     hamburgerCheck: document.getElementById('hamburger'),
-    navBar: document.querySelector('.primnav')
+    navBar: document.querySelector('.primnav'),
+    cards: Array.from(document.querySelectorAll('.item__card'))
 };
 
 const elStr = {

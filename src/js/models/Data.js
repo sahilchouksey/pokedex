@@ -12,6 +12,10 @@ export default class PokemonData {
         try {
             const data = await axios(`${request.defUrl}pokemon?limit=1050&offset=${this.offset}`);
             this.result = data.data.results;
+            this.names = [] 
+            data.data.results.forEach(e=> this.names.push(e.name))
+            localStorage.setItem('pokemonNames', this.names)
+            
         } catch (error) {
             dataView.popupError();
             console.log(error);

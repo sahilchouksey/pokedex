@@ -13,42 +13,73 @@ const state = {};
 state.filterb = 0;
 
 const controlSearch = async () => {
+    clearLoader();
     dataView.clearFilterBtn();
     dataView.removeError();
     window.location.hash = ""
-    let query = dataView.getInput().toLowerCase();
-    query = query.replace(/[^a-zA-Z]/g, '')
-    if (query) {
+    let query = dataView.getInput() //.toLowerCase();
+  
+    console.log(query);
+    if (query.length > 0) {
+        // document.activeElement.blur();
 
-        document.activeElement.blur();
+        state.search = []
+        query.forEach(q => state.search.push(new Search(q)) ) 
 
-        state.search = new Search(query)
+        console.log(state.search);
 
         dataView.clearResult()
         renderLoader(elements.container);
 
         try {
-            await state.search.getDetails();
+            state.search.forEach(async(s) => {
+                await s.getDetails();
+                
 
-            clearLoader();
+                clearLoader();
+                await dataView.renderResult(s.result);
+                
+            })
+            
             dataView.clearSearchInput()
-            await dataView.renderResult(state.search.result);
+            document.activeElement.blur();
+
             state.filterb--;
         } catch (error) {
             state.filterb--;
             dataView.popupError();
             console.log(error);
         }
+    } else {
+        state.filterb--;
+        dataView.popupError();
+        console.log(error);
     }
     
 }
 
 
+const debounce = (func, delay) => { 
+    let debounceTimer 
+    return function() { 
+        const context = this
+        const args = arguments 
+            clearTimeout(debounceTimer) 
+                debounceTimer 
+            = setTimeout(() => func.apply(context, args), delay) 
+    } 
+}  
 
-elements.searchForm.addEventListener('submit', e=> {
-    e.preventDefault();
+
+// elements.searchForm.addEventListener('onkeypress', e=> {
+//     e.preventDefault();
+//     controlSearch()
+// })
+
+elements.searchForm.addEventListener('keydown', debounce(function() { 
+    // e.preventDefault();
     controlSearch()
-})
+}, 1500)); 
 
 
 const controlPokemonData = async () => {
@@ -59,8 +90,11 @@ const controlPokemonData = async () => {
         state.pokeData = new Data(); // show num of res/ start
         
         await state.pokeData.getResults();
+
         clearLoader()
         await dataView.renderResult(state.pokeData.result);
+        
+
     } catch (error) {
         state.filterb--;
         dataView.popupError();
@@ -114,8 +148,11 @@ const controlFilterType = async () => {
             try {
                 
                 await state.filterType.getResults();
+
                 clearLoader();
                 await dataView.renderResult(state.filterType.result);
+                
+
                 state.filterb++;
 
             } catch (error) {
@@ -147,9 +184,11 @@ const controlFilterGen = async () => {
             try {
                 
                 await state.filterGen.getResults();
-                
+
                 clearLoader();
                 await dataView.renderResult(state.filterGen.result);
+                
+
                 state.filterb++;
 
             } catch (error) {
@@ -230,6 +269,8 @@ elements.paginationBtn.forEach(e=> e.addEventListener('click', async (e) => {
         }        
     }
   }))
+
+
 
 
 //   elements.resultList.addEventListener('click', async (e) => {
