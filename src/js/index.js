@@ -77,7 +77,7 @@ const debounce = (func, delay) => {
 elements.searchForm.addEventListener('keydown', debounce(function() { 
     // e.preventDefault();
     controlSearch()
-}, 800)); 
+}, 700)); 
 
 
 const controlPokemonData = async () => {
