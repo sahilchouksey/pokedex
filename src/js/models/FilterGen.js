@@ -13,6 +13,7 @@ export default class FilterType {
             const data = await axios(`${request.defUrl}generation/${this.gen}`);
             this.result = data.data.pokemon_species;
         } catch (error) {
+            dataView.clearResult();
             dataView.popupError();
             console.log(error);
         }

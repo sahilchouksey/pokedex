@@ -10,10 +10,13 @@ export default class Search {
 
     async getDetails() {
         try {
-            const data = await axios(`${request.defUrl}pokemon/${this.name}/`);
+            const data = await axios(`${request.defUrl}pokemon/${this.name}`);
         
+            console.log(data);
             this.result = data.data;
+            console.log(this.result);
         } catch (error) {
+            dataView.clearResult();
             dataView.popupError();
             console.log(error);
         }

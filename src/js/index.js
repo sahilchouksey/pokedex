@@ -18,6 +18,7 @@ const controlSearch = async () => {
     dataView.removeError();
     window.location.hash = ""
     let query = dataView.getInput() //.toLowerCase();
+    console.log(query);
   
     if (query.length > 0) {
         // document.activeElement.blur();
@@ -43,15 +44,18 @@ const controlSearch = async () => {
             document.activeElement.blur();
 
             state.filterb--;
-        } catch (error) {
+        } 
+        catch (error) {
             state.filterb--;
+            dataView.clearResult();
             dataView.popupError();
             console.log(error);
         }
     } else {
         state.filterb--;
+        dataView.clearResult();
         dataView.popupError();
-        console.log(error);
+        console.log('zzz');
     }
     
 }
@@ -73,7 +77,6 @@ const debounce = (func, delay) => {
 //     e.preventDefault();
 //     controlSearch()
 // })
-
 elements.searchForm.addEventListener('keydown', debounce(function() { 
     // e.preventDefault();
     controlSearch()
@@ -95,6 +98,7 @@ const controlPokemonData = async () => {
 
     } catch (error) {
         state.filterb--;
+        dataView.clearResult();
         dataView.popupError();
         console.log(error);
     }
@@ -103,11 +107,13 @@ const controlPokemonData = async () => {
 
 
 ['load'].forEach(e=> {
+    dataView.clearSearchInput()
     window.addEventListener(e, controlPokemonData);
     window.addEventListener(e, () => {if (window.location.hash !== "" && state.filterb < 1 ) dataView.addFilterBtn(window.location.hash.replace('#', ''))})
 })
 
 window.addEventListener('hashchange', () => {
+    dataView.clearSearchInput()
     if (window.location.hash !== "" && state.filterb < 1 ) dataView.addFilterBtn(window.location.hash.replace('#', ''))
 })
 
@@ -155,6 +161,7 @@ const controlFilterType = async () => {
 
             } catch (error) {
                 state.filterb--;
+                dataView.clearResult();
                 dataView.popupError();
                 console.log(error);
             }  
@@ -191,6 +198,7 @@ const controlFilterGen = async () => {
 
             } catch (error) {
                 state.filterb--;
+                dataView.clearResult();
                 dataView.popupError();
                 console.log(error);
             }  
@@ -262,6 +270,7 @@ elements.paginationBtn.forEach(e=> e.addEventListener('click', async (e) => {
                 dataView.renderResult(state.pokeData.result, goToPage);
             }
         }   catch(error) {
+            dataView.clearResult();
             dataView.popupError();
             console.log(error);
         }        
@@ -277,3 +286,4 @@ elements.paginationBtn.forEach(e=> e.addEventListener('click', async (e) => {
 //           if(!box.previousElementSibling.checked) box.previousElementSibling.checked = true;
 //       }
 //   })
+

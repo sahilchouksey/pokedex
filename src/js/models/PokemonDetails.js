@@ -34,6 +34,7 @@ export default class PokemonDetails {
 
 
         } catch (error) {
+            dataView.clearResult();
             dataView.popupError();
             console.log(error);
         }

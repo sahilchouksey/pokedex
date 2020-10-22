@@ -17,6 +17,7 @@ export default class PokemonData {
             localStorage.setItem('names', this.names)
             
         } catch (error) {
+            dataView.clearResult();
             dataView.popupError();
             console.log(error);
         }

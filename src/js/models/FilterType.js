@@ -15,6 +15,7 @@ export default class FilterType {
             results.push(data.data.pokemon.map(e=> e.pokemon)) 
             this.result = results[0];
         } catch (error) {
+            dataView.clearResult();
             dataView.popupError();
             console.log(error);
         }
