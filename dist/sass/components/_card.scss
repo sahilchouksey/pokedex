@@ -471,6 +471,8 @@
 				/* margin: 0 auto; */
 				/* margin-top: -2rem; */
 				transform: translate(-50%, -45%);
+				z-index: -1;
+				
 
 				@include respond (sm-dev) {
 					width: 80%;

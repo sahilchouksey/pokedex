@@ -631,7 +631,8 @@ body {
         /* margin-top: -2rem; */
         -webkit-transform: translate(-50%, -45%);
             -ms-transform: translate(-50%, -45%);
-                transform: translate(-50%, -45%); }
+                transform: translate(-50%, -45%);
+        z-index: -1; }
         @media only screen and (max-width: 31.25em) {
           .card#card-visitors .header .content .card__img {
             width: 80%; } }
