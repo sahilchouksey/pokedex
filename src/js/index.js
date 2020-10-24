@@ -18,7 +18,6 @@ const controlSearch = async () => {
     dataView.removeError();
     window.location.hash = ""
     let query = dataView.getInput() //.toLowerCase();
-    console.log(query);
   
     if (query.length > 0) {
         // document.activeElement.blur();
@@ -33,11 +32,8 @@ const controlSearch = async () => {
         try {
             state.search.forEach(async(s) => {
                 await s.getDetails();
-                
-
                 clearLoader();
                 await dataView.renderResult(s.result);
-                
             })
             
             dataView.clearSearchInput()
@@ -55,7 +51,6 @@ const controlSearch = async () => {
         state.filterb--;
         dataView.clearResult();
         dataView.popupError();
-        console.log('zzz');
     }
     
 }
