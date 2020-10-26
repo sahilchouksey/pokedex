@@ -123,6 +123,7 @@ body {
     transform: translate(-10rem, -50%); }
 
 .heading-primary {
+  margin-top: 1.1rem;
   float: left;
   display: inline-block;
   font-size: 3.4rem;
