@@ -146,6 +146,7 @@ body {
       padding-bottom: 3rem; } }
   @media only screen and (max-width: 31.25em) {
     .heading-primary {
+      margin-top: 0;
       padding-top: .8rem;
       padding-left: .2rem;
       font-size: 2.5rem; }
